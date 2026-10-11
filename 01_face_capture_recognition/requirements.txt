@@ -7,7 +7,7 @@ Invoke-WebRequest -Uri "https://github.com/Gourieff/Assets/raw/main/Insightface/
 # dir insightface*.whl
 # pip install insightface-0.7.3-cp311-cp311-win_amd64.whl
 #=== ALL OK ===
-# Streamlit: 1.65.0
+# Streamlit: 1.65.0   pip install --upgrade streamlit
 # OpenCV: 4.11.0
 # InsightFace: 0.7.3
 # ONNX Runtime: 1.17.0
