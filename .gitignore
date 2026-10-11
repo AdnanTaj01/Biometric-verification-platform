@@ -1,0 +1,41 @@
+# Virtual environments
+venv/
+env/
+ENV/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+
+# Data (privacy + size)
+data/
+*.pkl
+*.jpg
+*.jpeg
+*.png
+!docs/**/*.png
+
+# Environment variables
+.env
+.env.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# InsightFace models (large)
+.insightface/
+
+# Streamlit secrets
+.streamlit/secrets.toml

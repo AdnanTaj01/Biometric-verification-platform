@@ -1,0 +1,20 @@
+streamlit==1.32.0
+opencv-python==4.9.0.80
+
+# insightface==0.7.3     
+# cd E:\biometric-portfolio\01_face_capture_recognition
+Invoke-WebRequest -Uri "https://github.com/Gourieff/Assets/raw/main/Insightface/insightface-0.7.3-cp311-cp311-win_amd64.whl" -OutFile "insightface-0.7.3-cp311-cp311-win_amd64.whl"
+# dir insightface*.whl
+# pip install insightface-0.7.3-cp311-cp311-win_amd64.whl
+#=== ALL OK ===
+# Streamlit: 1.65.0
+# OpenCV: 4.11.0
+# InsightFace: 0.7.3
+# ONNX Runtime: 1.17.0
+# NumPy: 1.26.4
+# Scikit-learn: 1.4.1.post1
+
+onnxruntime==1.17.0
+numpy==1.26.4
+pillow==10.2.0
+scikit-learn==1.4.1.post1
