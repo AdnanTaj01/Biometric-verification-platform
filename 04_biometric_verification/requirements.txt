@@ -1,0 +1,8 @@
+streamlit==1.32.0
+opencv-python==4.9.0.80
+insightface==0.7.3
+onnxruntime==1.17.0
+numpy==1.26.4
+pillow==10.2.0
+scikit-learn==1.4.1.post1
+sqlalchemy==2.0.29
