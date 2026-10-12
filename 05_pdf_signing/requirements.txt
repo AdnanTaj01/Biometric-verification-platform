@@ -1,0 +1,11 @@
+streamlit==1.32.0
+pyhanko==0.25.3
+cryptography==43.0.3
+reportlab==4.1.0
+pillow==10.2.0
+
+
+# All OK
+# pyHanko: 0.25.3
+# cryptography: 43.0.3
+# reportlab: 4.1.0 

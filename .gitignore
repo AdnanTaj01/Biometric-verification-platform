@@ -1,9 +1,13 @@
+# ============================================
 # Virtual environments
+# ============================================
 venv/
 env/
 ENV/
 
+# ============================================
 # Python
+# ============================================
 __pycache__/
 *.py[cod]
 *$py.class
@@ -13,29 +17,79 @@ build/
 dist/
 *.egg-info/
 
+# ============================================
 # Data (privacy + size)
+# ============================================
 data/
 *.pkl
+
+# ============================================
+# Images (except docs screenshots)
+# ============================================
 *.jpg
 *.jpeg
 *.png
 !docs/**/*.png
 
+# ============================================
 # Environment variables
+# ============================================
 .env
 .env.local
 
+# ============================================
 # IDE
+# ============================================
 .vscode/
 .idea/
 *.swp
 
+# ============================================
 # OS
+# ============================================
 .DS_Store
 Thumbs.db
 
+# ============================================
 # InsightFace models (large)
+# ============================================
 .insightface/
 
+# ============================================
 # Streamlit secrets
+# ============================================
 .streamlit/secrets.toml
+
+# ============================================
+# Project 5: PDF Signing — SECURITY CRITICAL
+# ============================================
+# Private keys — NEVER commit
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Certificate directories
+05_pdf_signing/certs/
+certs/
+
+# Generated PDFs (signed output)
+05_pdf_signing/signed/
+05_pdf_signing/uploads/
+signed/
+uploads/
+
+# ============================================
+# Project 4: SQLite databases
+# ============================================
+04_biometric_verification/data/
+*.db
+*.sqlite
+*.sqlite3
+
+# ============================================
+# Fingerprint templates
+# ============================================
+02_fingerprint_scanner/data/
+fingerprints.pkl
+embeddings.pkl
