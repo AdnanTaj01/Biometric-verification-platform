@@ -30,10 +30,6 @@ Unlike Project 5 (which signs PDFs), Project 6 **only verifies**.
 
 **100% independent** — no imports from Project 5.
 
----
-
-
----
 
 ## ⚙️ Setup
 
@@ -41,3 +37,11 @@ Unlike Project 5 (which signs PDFs), Project 6 **only verifies**.
 cd 06_signature_verification
 ..\01_face_capture_recognition\venv\Scripts\Activate.ps1
 pip install -r requirements.txt
+
+## ⚠️ Known Limitations
+
+- **No timestamp authority (TSA) verification.** Signatures carry local time only.
+- **No revocation checking (CRL/OCSP).** `allow_fetching=False` blocks network access.
+- **Trust root is user-provided.** Production uses the OS trust store.
+- **No long-term validation (LTV).** For long-term validity, use PAdES-LTV.
+- **Only checks embedded signatures.** Detached signatures are out of scope. 
