@@ -1,0 +1,64 @@
+name: Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: ${{ matrix.module }}
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - module: 01_face_capture_recognition
+            deps: "numpy==1.26.4 opencv-python==4.9.0.80 pillow==10.2.0"
+
+          - module: 02_fingerprint_scanner
+            deps: "numpy==1.26.4 pillow==10.2.0"
+
+          - module: 03_quality_indicators
+            deps: "numpy==1.26.4 opencv-python==4.9.0.80 pillow==10.2.0"
+
+          - module: 04_biometric_verification
+            deps: "sqlalchemy==2.0.29 numpy==1.26.4"
+
+          - module: 05_pdf_signing
+            deps: "pyhanko==0.25.3 cryptography==43.0.3 reportlab==4.1.0 pillow==10.2.0"
+
+          - module: 06_signature_verification
+            deps: "pyhanko==0.25.3 cryptography==43.0.3 reportlab==4.1.0 pillow==10.2.0"
+
+          - module: 07_auth_rbac
+            deps: "sqlalchemy==2.0.29 bcrypt==4.1.2"
+
+          - module: 08_audit_logs
+            deps: "sqlalchemy==2.0.29 pandas==2.3.3"
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install test dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pytest
+          pip install ${{ matrix.deps }}
+
+      - name: Run tests
+        working-directory: ${{ matrix.module }}
+        run: pytest -v --tb=short
