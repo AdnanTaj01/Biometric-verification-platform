@@ -93,3 +93,14 @@ uploads/
 02_fingerprint_scanner/data/
 fingerprints.pkl
 embeddings.pkl
+
+# Pytest cache
+.pytest_cache/
+.pytest_cache
+
+# Coverage
+.coverage
+htmlcov/
+
+# Test artifacts
+*.log

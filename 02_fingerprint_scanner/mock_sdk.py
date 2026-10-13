@@ -3,12 +3,7 @@ Mock Fingerprint Scanner SDK.
 
 This module simulates the interface of real fingerprint scanner SDKs
 (DigitalPersona, Futronic, Mantra, etc.). The public API mirrors the
-typical vendor SDK shape:
-
-    scanner = FingerprintScanner()
-    scanner.connect()
-    result = scanner.capture(timeout=5)
-    template = result.template
+typical vendor SDK shape.
 
 Real vendor SDKs would swap this module for their own (e.g., ctypes bindings
 to a .dll). Application code should not change — only the import.
@@ -37,9 +32,9 @@ class CaptureResult:
     success: bool
     error_code: int
     error_message: str
-    quality_score: int           # 0-100, higher is better
-    template: Optional[np.ndarray]  # 512-byte feature template (mocked)
-    image: Optional[np.ndarray]     # raw fingerprint image (mocked, HxW uint8)
+    quality_score: int
+    template: Optional[np.ndarray]
+    image: Optional[np.ndarray]
     capture_time_ms: int
 
 
@@ -58,21 +53,18 @@ class FingerprintScanner:
     def __init__(self, device_name: str = "MockScan FX-2000"):
         self.device_name = device_name
         self.connected = False
-        self._finger_present = False  # simulate finger on sensor
+        self._finger_present = False
 
     # ---------- Device lifecycle ----------
     def connect(self) -> bool:
-        """Simulate connecting to the scanner."""
-        time.sleep(0.3)  # simulate USB handshake
+        time.sleep(0.3)
         self.connected = True
         return True
 
     def disconnect(self):
-        """Simulate disconnecting the scanner."""
         self.connected = False
 
     def get_device_status(self) -> dict:
-        """Return device connection status."""
         return {
             "connected": self.connected,
             "device_name": self.device_name if self.connected else None,
@@ -82,20 +74,26 @@ class FingerprintScanner:
 
     # ---------- Simulation helpers (mock only) ----------
     def simulate_finger_placed(self):
-        """Tell the mock that a finger has been placed on the sensor."""
         self._finger_present = True
 
     def simulate_finger_lifted(self):
-        """Tell the mock that the finger has been lifted."""
         self._finger_present = False
 
     # ---------- Capture ----------
-    def capture(self, timeout: int = 5, seed: Optional[int] = None) -> CaptureResult:
+    def capture(self, timeout: int = 5,
+                seed: Optional[int] = None,
+                force_quality: Optional[int] = None) -> CaptureResult:
         """
         Simulate a fingerprint capture.
 
-        In real SDKs this blocks until a finger is placed or timeout occurs.
-        Here we return immediately based on simulated state.
+        Args:
+            timeout: capture timeout (seconds)
+            seed: RNG seed — same seed = same template (deterministic)
+            force_quality: if set (0-100), bypasses random quality.
+                           Useful for testing.
+
+        Returns:
+            CaptureResult object.
         """
         start = time.time()
 
@@ -124,21 +122,21 @@ class FingerprintScanner:
         # Simulate capture time
         time.sleep(0.5)
 
-        # Generate a deterministic mock fingerprint based on seed
-        # (so the same finger always produces the same template in one session)
         rng = np.random.default_rng(seed)
 
-        # Quality score: random 40-95 (higher mostly)
-        quality = int(rng.integers(40, 96))
+        # Quality: use forced value if provided, else random 40-95
+        if force_quality is not None:
+            quality = int(force_quality)
+        else:
+            quality = int(rng.integers(40, 96))
 
         # Mock 512-byte template
         template = rng.integers(0, 256, size=512, dtype=np.uint8)
 
-        # Mock fingerprint image (HxW uint8) — for visualization
+        # Mock fingerprint image (256x256 uint8)
         img_h, img_w = 256, 256
-        # Create a fingerprint-like pattern (concentric sine waves + noise)
         y, x = np.mgrid[0:img_h, 0:img_w]
-        r = np.sqrt((x - img_w/2)**2 + (y - img_h/2)**2)
+        r = np.sqrt((x - img_w / 2) ** 2 + (y - img_h / 2) ** 2)
         pattern = (np.sin(r * 0.5) * 127 + 128).astype(np.uint8)
         noise = rng.integers(-20, 20, size=(img_h, img_w))
         image = np.clip(pattern.astype(int) + noise, 0, 255).astype(np.uint8)
@@ -169,19 +167,17 @@ class FingerprintScanner:
 # ---------- Template matching (mock) ----------
 def compare_templates(t1: np.ndarray, t2: np.ndarray) -> float:
     """
-    Compare two fingerprint templates.
-    Returns similarity score 0.0 - 1.0.
+    Compare two fingerprint templates. Returns similarity 0.0 - 1.0.
     In real SDKs this is a proprietary matcher function.
     """
     if t1 is None or t2 is None:
         return 0.0
-    # Hamming-like similarity on byte arrays
     matches = np.sum(t1 == t2)
     total = len(t1)
     return float(matches / total)
 
 
-# ---------- Quick self-test ----------
+# ---------- Self-test ----------
 if __name__ == "__main__":
     print("=" * 60)
     print("Mock Fingerprint SDK — self test")
@@ -193,26 +189,22 @@ if __name__ == "__main__":
     scanner.connect()
     print(f"[2] Status after connect: {scanner.get_device_status()}")
 
-    # Test: no finger
     r = scanner.capture()
     print(f"\n[3] Capture without finger:")
     print(f"    success={r.success}, error={r.error_message}")
 
-    # Test: with finger
     scanner.simulate_finger_placed()
-    r = scanner.capture(seed=42)
-    print(f"\n[4] Capture with finger:")
+    r = scanner.capture(seed=42, force_quality=85)
+    print(f"\n[4] Capture with finger (forced quality):")
     print(f"    success={r.success}, quality={r.quality_score}")
     print(f"    template shape: {r.template.shape if r.template is not None else None}")
     print(f"    capture_time: {r.capture_time_ms} ms")
 
-    # Test: same seed → same template (deterministic)
-    r2 = scanner.capture(seed=42)
+    r2 = scanner.capture(seed=42, force_quality=85)
     sim = compare_templates(r.template, r2.template)
     print(f"\n[5] Same seed twice → similarity: {sim:.2%}")
 
-    # Test: different seed → different template
-    r3 = scanner.capture(seed=99)
+    r3 = scanner.capture(seed=99, force_quality=85)
     sim2 = compare_templates(r.template, r3.template)
     print(f"[6] Different seed → similarity: {sim2:.2%}")
 
