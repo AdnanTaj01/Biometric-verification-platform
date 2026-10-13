@@ -47,3 +47,14 @@ This is a **hard requirement in the SRS (FR-11)**: *"Private signing key fronten
 cd 05_pdf_signing
 ..\01_face_capture_recognition\venv\Scripts\Activate.ps1
 pip install pyhanko==0.25.3 cryptography==43.0.3 reportlab==4.1.0
+
+## 📸 Screenshots
+
+### 05 Upload Sign
+
+![05 Upload Sign](../docs/screenshots/05_pdf_signing/05_upload_sign.png)
+
+### 05 Demo Pdf
+
+![05 Demo Pdf](../docs/screenshots/05_pdf_signing/05_demo_pdf.png)
+

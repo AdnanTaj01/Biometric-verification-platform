@@ -80,3 +80,18 @@ cd 04_biometric_verification
 
 # Add SQLAlchemy
 pip install sqlalchemy==2.0.29
+
+## 📸 Screenshots
+
+### 04 Enroll
+
+![04 Enroll](../docs/screenshots/04_biometric_verification/04_enroll.png)
+
+### 04 Verify
+
+![04 Verify](../docs/screenshots/04_biometric_verification/04_verify.png)
+
+### 04 History
+
+![04 History](../docs/screenshots/04_biometric_verification/04_history.png)
+

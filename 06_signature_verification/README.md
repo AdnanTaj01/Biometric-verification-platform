@@ -71,4 +71,19 @@ pip install -r requirements.txt
 - **No revocation checking (CRL/OCSP).** `allow_fetching=False` blocks network access.
 - **Trust root is user-provided.** Production uses the OS trust store.
 - **No long-term validation (LTV).** For long-term validity, use PAdES-LTV.
-- **Only checks embedded signatures.** Detached signatures are out of scope. 
+- **Only checks embedded signatures.** Detached signatures are out of scope.
+
+## 📸 Screenshots
+
+### 06 Upload
+
+![06 Upload](../docs/screenshots/06_signature_verification/06_upload.png)
+
+### 06 Fixtures
+
+![06 Fixtures](../docs/screenshots/06_signature_verification/06_fixtures.png)
+
+### 06 Signed Valid
+
+![06 Signed Valid](../docs/screenshots/06_signature_verification/06_signed_valid.png)
+

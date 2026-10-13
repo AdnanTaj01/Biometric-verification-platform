@@ -72,3 +72,14 @@ Permissions are enforced **server-side** on every action — the UI just hides w
 cd 07_auth_rbac
 ..\01_face_capture_recognition\venv\Scripts\Activate.ps1
 pip install -r requirements.txt
+
+## 📸 Screenshots
+
+### 07 Login
+
+![07 Login](../docs/screenshots/07_auth_rbac/07_login.png)
+
+### 07 Dashboard
+
+![07 Dashboard](../docs/screenshots/07_auth_rbac/07_dashboard.png)
+

@@ -42,3 +42,14 @@ _BLOCKED_KEYS = {
     "raw_image", "raw_biometric", "embedding",
     "fingerprint_image", "fingerprint_template", "face_embedding",
 }
+
+## 📸 Screenshots
+
+### 08 Empty
+
+![08 Empty](../docs/screenshots/08_audit_logs/08_empty.png)
+
+### 08 Dashboard
+
+![08 Dashboard](../docs/screenshots/08_audit_logs/08_dashboard.png)
+

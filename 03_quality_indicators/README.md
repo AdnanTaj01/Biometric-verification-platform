@@ -65,3 +65,10 @@ cd 03_quality_indicators
 python -m venv venv
 venv\Scripts\activate
 pip install -r requirements.txt
+
+## 📸 Screenshots
+
+### 03 Live Capture
+
+![03 Live Capture](../docs/screenshots/03_quality_indicators/03_live_capture.png)
+

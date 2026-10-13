@@ -37,3 +37,14 @@ scanner = FingerprintScanner()
 scanner.connect()
 result = scanner.capture(timeout=5)
 # result.template, result.quality_score, result.error_code, ...
+
+## 📸 Screenshots
+
+### 02 Device Status
+
+![02 Device Status](../docs/screenshots/02_fingerprint_scanner/02_device_status.png)
+
+### 02 Capture Success
+
+![02 Capture Success](../docs/screenshots/02_fingerprint_scanner/02_capture_success.png)
+
