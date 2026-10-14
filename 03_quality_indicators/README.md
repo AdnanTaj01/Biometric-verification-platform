@@ -1,3 +1,14 @@
+## 📸 Screenshots
+
+### 03 Initial
+
+![03 Initial](../docs/screenshots/03_quality_indicators/03_initial.png)
+
+### 03 Live Capture
+
+![03 Live Capture](../docs/screenshots/03_quality_indicators/03_live_capture.png)
+
+
 # 🔍 Project 3: Quality Indicators Deep-Dive
 
 A dedicated Streamlit module that performs **comprehensive image quality analysis** on captured frames — with red/yellow/green indicators, numeric scores, and actionable recommendations.
@@ -66,12 +77,3 @@ python -m venv venv
 venv\Scripts\activate
 pip install -r requirements.txt
 
-## 📸 Screenshots
-
-### 03 Initial
-
-![03 Initial](../docs/screenshots/03_quality_indicators/03_initial.png)
-
-### 03 Live Capture
-
-![03 Live Capture](../docs/screenshots/03_quality_indicators/03_live_capture.png)
