@@ -1,0 +1,5 @@
+pip install streamlit==1.32.0
+pip install numpy==1.26.4
+pip install pillow==10.2.0
+pip install opencv-python==4.9.0.80
+pip install mediapipe==0.10.14

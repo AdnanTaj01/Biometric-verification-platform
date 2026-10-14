@@ -43,6 +43,9 @@ jobs:
           - module: 08_audit_logs
             deps: "sqlalchemy==2.0.29 pandas==2.3.3"
 
+          - module: 09_liveness_detection
+            deps: "numpy==1.26.4 opencv-python==4.9.0.80 pillow==10.2.0 mediapipe==0.10.14"
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
