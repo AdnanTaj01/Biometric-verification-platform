@@ -1,3 +1,13 @@
+## 📸 Screenshots
+
+### 05 Upload Tab
+
+![05 Upload Tab](../docs/screenshots/05_pdf_signing/05_upload_tab.png)
+
+### 05 Demo Tab
+
+![05 Demo Tab](../docs/screenshots/05_pdf_signing/05_demo_tab.png)
+
 # 🔐 Project 5: PDF Digital Signature
 
 A Streamlit module for applying **cryptographic digital signatures** to PDF documents using X.509 certificates — powered by **pyHanko** and **cryptography**.
@@ -48,12 +58,4 @@ cd 05_pdf_signing
 ..\01_face_capture_recognition\venv\Scripts\Activate.ps1
 pip install pyhanko==0.25.3 cryptography==43.0.3 reportlab==4.1.0
 
-## 📸 Screenshots
 
-### 05 Upload Tab
-
-![05 Upload Tab](../docs/screenshots/05_pdf_signing/05_upload_tab.png)
-
-### 05 Demo Tab
-
-![05 Demo Tab](../docs/screenshots/05_pdf_signing/05_demo_tab.png)
