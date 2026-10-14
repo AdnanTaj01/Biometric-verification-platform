@@ -1,3 +1,18 @@
+## 📸 Screenshots
+
+### 04 Enroll Tab
+
+![04 Enroll Tab](../docs/screenshots/04_biometric_verification/04_enroll_tab.png)
+
+### 04 Verify Tab
+
+![04 Verify Tab](../docs/screenshots/04_biometric_verification/04_verify_tab.png)
+
+### 04 History Tab
+
+![04 History Tab](../docs/screenshots/04_biometric_verification/04_history_tab.png)
+
+
 # 🎯 Project 4: Biometric Verification Engine
 
 A unified biometric verification module combining **face recognition** (InsightFace) and **fingerprint verification** (Mock SDK) — with SQLite persistence for identities, references, and verification history.
@@ -81,16 +96,3 @@ cd 04_biometric_verification
 # Add SQLAlchemy
 pip install sqlalchemy==2.0.29
 
-## 📸 Screenshots
-
-### 04 Enroll Tab
-
-![04 Enroll Tab](../docs/screenshots/04_biometric_verification/04_enroll_tab.png)
-
-### 04 Verify Tab
-
-![04 Verify Tab](../docs/screenshots/04_biometric_verification/04_verify_tab.png)
-
-### 04 History Tab
-
-![04 History Tab](../docs/screenshots/04_biometric_verification/04_history_tab.png)
