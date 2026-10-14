@@ -1,3 +1,17 @@
+## 📸 Screenshots
+
+### 07 Login
+
+![07 Login](../docs/screenshots/07_auth_rbac/07_login.png)
+
+### 07 Dashboard
+
+![07 Dashboard](../docs/screenshots/07_auth_rbac/07_dashboard.png)
+
+### 07 Audit Logs
+
+![07 Audit Logs](../docs/screenshots/07_auth_rbac/07_audit_logs.png)
+
 # 🔐 Project 7: Authentication & Role-Based Access Control
 
 A Streamlit module demonstrating secure user authentication with bcrypt, a 4-role permission matrix, admin user management, and authentication audit logging.
@@ -73,16 +87,4 @@ cd 07_auth_rbac
 ..\01_face_capture_recognition\venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 
-## 📸 Screenshots
 
-### 07 Login
-
-![07 Login](../docs/screenshots/07_auth_rbac/07_login.png)
-
-### 07 Dashboard
-
-![07 Dashboard](../docs/screenshots/07_auth_rbac/07_dashboard.png)
-
-### 07 Audit Logs
-
-![07 Audit Logs](../docs/screenshots/07_auth_rbac/07_audit_logs.png)
