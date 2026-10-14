@@ -50,11 +50,10 @@ pip install pyhanko==0.25.3 cryptography==43.0.3 reportlab==4.1.0
 
 ## 📸 Screenshots
 
-### 05 Upload Sign
+### 05 Upload Tab
 
-![05 Upload Sign](../docs/screenshots/05_pdf_signing/05_upload_sign.png)
+![05 Upload Tab](../docs/screenshots/05_pdf_signing/05_upload_tab.png)
 
-### 05 Demo Pdf
+### 05 Demo Tab
 
-![05 Demo Pdf](../docs/screenshots/05_pdf_signing/05_demo_pdf.png)
-
+![05 Demo Tab](../docs/screenshots/05_pdf_signing/05_demo_tab.png)

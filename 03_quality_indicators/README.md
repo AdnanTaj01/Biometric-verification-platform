@@ -68,7 +68,10 @@ pip install -r requirements.txt
 
 ## 📸 Screenshots
 
+### 03 Initial
+
+![03 Initial](../docs/screenshots/03_quality_indicators/03_initial.png)
+
 ### 03 Live Capture
 
 ![03 Live Capture](../docs/screenshots/03_quality_indicators/03_live_capture.png)
-

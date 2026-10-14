@@ -45,11 +45,18 @@ _BLOCKED_KEYS = {
 
 ## 📸 Screenshots
 
-### 08 Empty
+### 08 Empty State
 
-![08 Empty](../docs/screenshots/08_audit_logs/08_empty.png)
+![08 Empty State](../docs/screenshots/08_audit_logs/08_empty_state.png)
 
 ### 08 Dashboard
 
 ![08 Dashboard](../docs/screenshots/08_audit_logs/08_dashboard.png)
 
+### 08 Event Log
+
+![08 Event Log](../docs/screenshots/08_audit_logs/08_event_log.png)
+
+### 08 Export
+
+![08 Export](../docs/screenshots/08_audit_logs/08_export.png)

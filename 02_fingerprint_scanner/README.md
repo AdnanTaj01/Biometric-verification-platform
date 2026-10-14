@@ -40,11 +40,18 @@ result = scanner.capture(timeout=5)
 
 ## 📸 Screenshots
 
-### 02 Device Status
+### 02 Initial
 
-![02 Device Status](../docs/screenshots/02_fingerprint_scanner/02_device_status.png)
+![02 Initial](../docs/screenshots/02_fingerprint_scanner/02_initial.png)
+
+### 02 Connected
+
+![02 Connected](../docs/screenshots/02_fingerprint_scanner/02_connected.png)
+
+### 02 Finger No Place
+
+![02 Finger No Place](../docs/screenshots/02_fingerprint_scanner/02_finger_no_place.png)
 
 ### 02 Capture Success
 
 ![02 Capture Success](../docs/screenshots/02_fingerprint_scanner/02_capture_success.png)
-

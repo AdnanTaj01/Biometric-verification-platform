@@ -75,15 +75,18 @@ pip install -r requirements.txt
 
 ## 📸 Screenshots
 
-### 06 Upload
+### 06 Upload Tab
 
-![06 Upload](../docs/screenshots/06_signature_verification/06_upload.png)
+![06 Upload Tab](../docs/screenshots/06_signature_verification/06_upload_tab.png)
 
-### 06 Fixtures
+### 06 Fixtures Tab
 
-![06 Fixtures](../docs/screenshots/06_signature_verification/06_fixtures.png)
+![06 Fixtures Tab](../docs/screenshots/06_signature_verification/06_fixtures_tab.png)
 
-### 06 Signed Valid
+### 06 Verify Signed
 
-![06 Signed Valid](../docs/screenshots/06_signature_verification/06_signed_valid.png)
+![06 Verify Signed](../docs/screenshots/06_signature_verification/06_verify_signed.png)
 
+### 06 Verify Tampered
+
+![06 Verify Tampered](../docs/screenshots/06_signature_verification/06_verify_tampered.png)

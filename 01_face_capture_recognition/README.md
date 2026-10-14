@@ -39,7 +39,10 @@ This project is part of a larger **Biometric Identity Verification & Secure E-Si
 
 ## 📸 Screenshots
 
+### 01 Initial
+
+![01 Initial](../docs/screenshots/01_face_capture_recognition/01_initial.png)
+
 ### 01 Live Capture
 
 ![01 Live Capture](../docs/screenshots/01_face_capture_recognition/01_live_capture.png)
-

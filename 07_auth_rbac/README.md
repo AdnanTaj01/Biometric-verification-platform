@@ -83,3 +83,6 @@ pip install -r requirements.txt
 
 ![07 Dashboard](../docs/screenshots/07_auth_rbac/07_dashboard.png)
 
+### 07 Audit Logs
+
+![07 Audit Logs](../docs/screenshots/07_auth_rbac/07_audit_logs.png)
