@@ -1,3 +1,13 @@
+## 📸 Screenshots
+
+### 01 Initial
+
+![01 Initial](../docs/screenshots/01_face_capture_recognition/01_initial.png)
+
+### 01 Live Capture
+
+![01 Live Capture](../docs/screenshots/01_face_capture_recognition/01_live_capture.png)
+
 # 🧑 Project 1: Live Face Capture & Recognition
 
 A Streamlit-based biometric face verification module that captures live webcam frames, runs quality checks with red/green indicators, and matches detected faces against registered test identities using InsightFace embeddings and cosine similarity.
@@ -35,14 +45,4 @@ This project is part of a larger **Biometric Identity Verification & Secure E-Si
 
 ---
 
-## 🏗️ Architecture
 
-## 📸 Screenshots
-
-### 01 Initial
-
-![01 Initial](../docs/screenshots/01_face_capture_recognition/01_initial.png)
-
-### 01 Live Capture
-
-![01 Live Capture](../docs/screenshots/01_face_capture_recognition/01_live_capture.png)
